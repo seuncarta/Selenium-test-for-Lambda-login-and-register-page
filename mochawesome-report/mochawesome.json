@@ -1,0 +1,221 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-02-10T07:15:14.154Z",
+    "end": "2023-02-10T07:15:51.127Z",
+    "duration": 36973,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "451f0430-e1fb-4994-a61a-0bfff4fd5af9",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0f2b35e2-e9af-4492-bca1-03611cb294cb",
+          "title": "Sign up using valid credentials of fullname, email, password and phone number.",
+          "fullFile": "C:\\Users\\USER\\Desktop\\seleniumDemo\\Registrationpage\\Signuptest.js",
+          "file": "\\Registrationpage\\Signuptest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify registration with valid data",
+              "fullTitle": "Sign up using valid credentials of fullname, email, password and phone number. Verify registration with valid data",
+              "timedOut": null,
+              "duration": 9806,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Lunch the browser\n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate to our application\n        await driver.get(\"https://accounts.lambdatest.com/register\");\n        //Filled in your data\n        let firstName = await driver.findElement(By.id(\"name\"));\n        firstName.sendKeys(\"Michael\");\n        let userEmail = await driver.findElement(By.id(\"email\"));\n        userEmail.sendKeys(\"Michael@gmail.com\");\n        let password = await driver.findElement(By.id(\"userpassword\"));\n        password.sendKeys(\"MichaelSam2023\");\n        let phoneNumber = await driver.findElement(By.id(\"phone\"));\n        phoneNumber.sendKeys(\"08134589945\");\n        let signUp = await driver.findElement(By.css('button[data-amplitude=\"R_signup\"]'));\n        await signUp.click();\n        await driver.wait(until.urlIs('https://accounts.lambdatest.com/email/verify'), 3000, 'Showld load dashboard page');",
+              "err": {
+                "message": "TimeoutError: Showld load dashboard page\nWait timed out after 3168ms",
+                "estack": "TimeoutError: Showld load dashboard page\nWait timed out after 3168ms\n    at C:\\Users\\USER\\Desktop\\seleniumDemo\\node_modules\\selenium-webdriver\\lib\\webdriver.js:908:17\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)",
+                "diff": null
+              },
+              "uuid": "f9b5f1f2-9ea2-4157-af28-8f92ce54dc40",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f9b5f1f2-9ea2-4157-af28-8f92ce54dc40"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9806,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "4c7bc394-ce08-45ff-b6ea-2b0732081b70",
+          "title": "Sign up using valid credentials when Password is not at least 8 characters long",
+          "fullFile": "C:\\Users\\USER\\Desktop\\seleniumDemo\\Registrationpage\\Signuptest.js",
+          "file": "\\Registrationpage\\Signuptest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify registration with less than 8 character password",
+              "fullTitle": "Sign up using valid credentials when Password is not at least 8 characters long Verify registration with less than 8 character password",
+              "timedOut": null,
+              "duration": 6792,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Lunch the browser\n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate to our application\n        await driver.get(\"https://accounts.lambdatest.com/register\");\n        //Filled in your data\n        let firstName = await driver.findElement(By.id(\"name\"));\n        firstName.sendKeys(\"Michael\");\n        let userEmail = await driver.findElement(By.id(\"email\"));\n        userEmail.sendKeys(\"Samuel@gmail.com\");\n        let password = await driver.findElement(By.id(\"userpassword\"));\n        password.sendKeys(\"Mic2023\");\n        let phoneNumber = await driver.findElement(By.id(\"phone\"));\n        phoneNumber.sendKeys(\"08134589945\");\n        let signUp = await driver.findElement(By.css('button[data-amplitude=\"R_signup\"]'));\n        await signUp.click();\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-password\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Password should be at least 8 characters long\", 'error message from less than 8 character password');\n        //Close browser when done\n        await driver.quit();",
+              "err": {},
+              "uuid": "eaa9b855-1c66-49d1-b3cb-1c8831bc1332",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eaa9b855-1c66-49d1-b3cb-1c8831bc1332"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6792,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "e763a351-0b03-4dd5-ac2a-fdaefd0db211",
+          "title": "Sign up using with an already registered email",
+          "fullFile": "C:\\Users\\USER\\Desktop\\seleniumDemo\\Registrationpage\\Signuptest.js",
+          "file": "\\Registrationpage\\Signuptest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify registration with an already registered email",
+              "fullTitle": "Sign up using with an already registered email Verify registration with an already registered email",
+              "timedOut": null,
+              "duration": 9756,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Lunch the browser\n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate to our application\n        await driver.get(\"https://accounts.lambdatest.com/register\");\n        //Filled in your data\n        let firstName = await driver.findElement(By.id(\"name\"));\n        firstName.sendKeys(\"Michael\");\n        let userEmail = await driver.findElement(By.id(\"email\"));\n        userEmail.sendKeys(\"Seuncarta@gmail.com\");\n        let password = await driver.findElement(By.id(\"userpassword\"));\n        password.sendKeys(\"Mathesakf\");\n        let phoneNumber = await driver.findElement(By.id(\"phone\"));\n        phoneNumber.sendKeys(\"08134589945\");\n        let signUp = await driver.findElement(By.css('button[data-amplitude=\"R_signup\"]'));\n        await signUp.click();\n        /*\n        The error message is not visible until you click login,\n        the below code is telling the runner to wait for 3 seconds\n        after clicking for the element \"error message\" to become \n        */\n        \n        await driver.wait(until.elementLocated(By.css('p[data-testid=\"errors-email\"]')), 3000)\n        //To test the error message displayed is the correct one for an already registered email\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-email\"]'))).getText();\n        assert.strictEqual(errorMessage, \"This Email is already registered\", 'error message from an already registered');\n        //Close browser when done\n        await driver.quit();",
+              "err": {},
+              "uuid": "a157e794-0af4-4cb1-8e30-66936a816d6d",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a157e794-0af4-4cb1-8e30-66936a816d6d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9756,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "4dbd22d2-e873-4d68-9d4b-143a63082dcd",
+          "title": "Sign up using valid credentials using a wrong email (not a correct email format)",
+          "fullFile": "C:\\Users\\USER\\Desktop\\seleniumDemo\\Registrationpage\\Signuptest.js",
+          "file": "\\Registrationpage\\Signuptest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify registration using a wrong email (not a correct email format)",
+              "fullTitle": "Sign up using valid credentials using a wrong email (not a correct email format) Verify registration using a wrong email (not a correct email format)",
+              "timedOut": null,
+              "duration": 10096,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Lunch the browser\n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate to our application\n        await driver.get(\"https://accounts.lambdatest.com/register\");\n        //Filled in your data\n        let firstName = await driver.findElement(By.id(\"name\"));\n        firstName.sendKeys(\"Michael\");\n        let userEmail = await driver.findElement(By.id(\"email\"));\n        userEmail.sendKeys(\"Samuelgmail.com\");\n        let password = await driver.findElement(By.id(\"userpassword\"));\n        password.sendKeys(\"Mic202sas3\");\n        let phoneNumber = await driver.findElement(By.id(\"phone\"));\n        phoneNumber.sendKeys(\"08134589945\");\n        let signUp = await driver.findElement(By.css('button[data-amplitude=\"R_signup\"]'));\n        await signUp.click();\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-email\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Invalid email address\", 'error message from less than 8 character password');\n        //Close browser when done\n        await driver.quit();",
+              "err": {},
+              "uuid": "f2ca074f-fa92-454a-9ac1-406d270b441b",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f2ca074f-fa92-454a-9ac1-406d270b441b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10096,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
