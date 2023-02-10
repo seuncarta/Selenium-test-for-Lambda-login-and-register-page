@@ -1,99 +1,23 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 2,
-    "passes": 2,
+    "suites": 0,
+    "tests": 0,
+    "passes": 0,
     "pending": 0,
     "failures": 0,
-    "start": "2023-02-10T08:13:40.407Z",
-    "end": "2023-02-10T08:14:14.553Z",
-    "duration": 34146,
-    "testsRegistered": 2,
-    "passPercent": 100,
-    "pendingPercent": 0,
-    "other": 0,
-    "hasOther": false,
+    "start": "2023-02-10T16:26:57.721Z",
+    "end": "2023-02-10T16:26:58.397Z",
+    "duration": 676,
+    "testsRegistered": 0,
+    "passPercent": null,
+    "pendingPercent": null,
+    "other": 1,
+    "hasOther": true,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    {
-      "uuid": "372e390d-0563-47ab-848f-08af78652f93",
-      "title": "",
-      "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\LoginPage\\LoginTest.js",
-      "file": "\\LoginPage\\LoginTest.js",
-      "beforeHooks": [],
-      "afterHooks": [],
-      "tests": [],
-      "suites": [
-        {
-          "uuid": "e37c82a3-ae65-47a1-b57b-48a869def4b9",
-          "title": "Log in using a valid credentials",
-          "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\LoginPage\\LoginTest.js",
-          "file": "\\LoginPage\\LoginTest.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "Verify sucessful Log in using a valid credential",
-              "fullTitle": "Log in using a valid credentials Verify sucessful Log in using a valid credential",
-              "timedOut": null,
-              "duration": 17282,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"seuncarta@gmail.com\");\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"Economicedu$156\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        await login.click();\n        await driver.wait(until.urlIs('https://accounts.lambdatest.com/dashboard'), 3000, 'Showld load dashboard page');\n        //Close browser\n        await driver.quit();",
-              "err": {},
-              "uuid": "f2aded1f-5a90-4b46-b1c8-dc5ed7036f07",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify logging in using an incorrect password 'valid email but a wrong password' ",
-              "fullTitle": "Log in using a valid credentials Verify logging in using an incorrect password 'valid email but a wrong password' ",
-              "timedOut": null,
-              "duration": 16269,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n\n    await driver.get('https://accounts.lambdatest.com/login');\n\n    let username = await driver.findElement(By.id(\"email\"));\n    username.sendKeys(\"seuncarta@gmail.com\");\n\n    let password = await driver.findElement(By.id(\"password\"));\n    password.sendKeys(\"Economicedu\");\n\n    let login = await driver.findElement(By.id(\"login-button\"));\n    login.click();\n\n    await driver.manage().setTimeouts({ implicit: 3000 });\n\n    let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-password\"]'))).getText();\n\n    assert.strictEqual(errorMessage, \"Please enter a correct username and password. Note that the password is case-sensitive. After 4 unsuccessful attempts your account will be locked.\", 'error message from wrong password');\n\n    //Close browser\n    await driver.quit();",
-              "err": {},
-              "uuid": "6494e965-157a-48c5-93cb-9570c1a7c19d",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [
-            "f2aded1f-5a90-4b46-b1c8-dc5ed7036f07",
-            "6494e965-157a-48c5-93cb-9570c1a7c19d"
-          ],
-          "failures": [],
-          "pending": [],
-          "skipped": [],
-          "duration": 33551,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": null
-        }
-      ],
-      "passes": [],
-      "failures": [],
-      "pending": [],
-      "skipped": [],
-      "duration": 0,
-      "root": true,
-      "rootEmpty": true,
-      "_timeout": 0
-    }
+    false
   ],
   "meta": {
     "mocha": {

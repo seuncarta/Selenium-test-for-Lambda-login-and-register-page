@@ -19,7 +19,7 @@ describe("Log in Test for Lambda Website", function () {
         await login.click();
 
         await driver.wait(until.urlIs('https://accounts.lambdatest.com/dashboard'), 3000, 'Showld load dashboard page');
-        
+
         //Close browser
         await driver.quit();
 
