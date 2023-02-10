@@ -2,7 +2,7 @@ const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
 const assert = require("assert");
 
 
-describe("Sign up test on Lambda.", function () {
+describe("Sign up test on Lambda Website", function () {
 
     it("Verify registration with valid data(fullname, email, password and phone number)", async function () {
 
