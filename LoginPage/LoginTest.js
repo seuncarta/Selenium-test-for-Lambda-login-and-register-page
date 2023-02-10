@@ -1,9 +1,9 @@
 const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
 const assert = require("assert");
 
-describe("Log in using a valid credentials", function () {
+describe("Log in Test for Lambda Website", function () {
 
-    it("successfully Log in using a valid credential", async function () {
+    it("Verify sucessful Log in using a valid credential", async function () {
 
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
@@ -19,18 +19,13 @@ describe("Log in using a valid credentials", function () {
         await login.click();
 
         await driver.wait(until.urlIs('https://accounts.lambdatest.com/dashboard'), 3000, 'Showld load dashboard page');
-
-
+        
         //Close browser
         await driver.quit();
 
-    })
+    });
 
-})
-
-describe("Log in using a valid email but a wrong password", function () {
-
-    it("Verify logging in using an incorrect password", async function () {
+    it("Verify logging in using an incorrect password 'valid email but a wrong password' ", async function () {
 
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
@@ -54,13 +49,9 @@ describe("Log in using a valid email but a wrong password", function () {
         //Close browser
         await driver.quit();
 
-    })
+    });
 
-})
-
-describe("Log in using a wrong email (not previously registered on the app) but correct password", function () {
-
-    it("Verify logging in using a wrong email", async function () {
+    it("Verify logging in using a email that has not been not previously registered", async function () {
 
         let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
@@ -83,11 +74,7 @@ describe("Log in using a wrong email (not previously registered on the app) but 
         //Close browser
         await driver.quit();
 
-    })
-
-})
-
-describe("Log in with email field empty", function () {
+    });
 
     it("Verify logging in using an empty email (email field empty)", async function () {
 
@@ -111,11 +98,7 @@ describe("Log in with email field empty", function () {
         //Close browser
         await driver.quit();
 
-    })
-
-})
-
-describe("Log in using Verify leaving the password filed empty", function () {
+    });
 
     it("Verify leaving the password filed empty", async function () {
 
@@ -139,11 +122,7 @@ describe("Log in using Verify leaving the password filed empty", function () {
         //Close browser
         await driver.quit();
 
-    })
-
-})
-
-describe("Log in using a wrong email (not a correct email format)", function () {
+    });
 
     it("Verify login while making a spelling error in the mail feild", async function () {
 
@@ -167,6 +146,6 @@ describe("Log in using a wrong email (not a correct email format)", function () 
         //Close browser
         await driver.quit();
 
-    })
+    });
 
-})
+});
