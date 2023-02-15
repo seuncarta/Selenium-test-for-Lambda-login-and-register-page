@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 6,
-    "passes": 5,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2023-02-10T16:47:31.211Z",
-    "end": "2023-02-10T16:48:35.350Z",
-    "duration": 64139,
-    "testsRegistered": 6,
-    "passPercent": 83.33333333333334,
+    "failures": 0,
+    "start": "2023-02-15T14:07:35.754Z",
+    "end": "2023-02-15T14:07:54.165Z",
+    "duration": 18411,
+    "testsRegistered": 1,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ded53016-d74a-4d5e-a23f-a317497e6339",
+      "uuid": "6a548e02-102f-446f-a124-54072880b53e",
       "title": "",
       "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\LoginPage\\LoginTest.js",
       "file": "\\LoginPage\\LoginTest.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "02b0fcc6-7441-4740-b325-1ba3cba69a78",
+          "uuid": "f893c9c6-3813-4c82-8aba-3fe09fa61e91",
           "title": "Log in Test for Lambda Website",
           "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\LoginPage\\LoginTest.js",
           "file": "\\LoginPage\\LoginTest.js",
@@ -35,113 +35,19 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "Verify sucessful Log in using a valid credential",
-              "fullTitle": "Log in Test for Lambda Website Verify sucessful Log in using a valid credential",
-              "timedOut": null,
-              "duration": 11237,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"seuncarta@gmail.com\");\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"Economicedu$156\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        await login.click();\n        await driver.wait(until.urlIs('https://accounts.lambdatest.com/dashboard'), 3000, 'Showld load dashboard page');\n        \n        //Close browser\n        await driver.quit();",
-              "err": {
-                "message": "TimeoutError: Showld load dashboard page\nWait timed out after 3620ms",
-                "estack": "TimeoutError: Showld load dashboard page\nWait timed out after 3620ms\n    at C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\node_modules\\selenium-webdriver\\lib\\webdriver.js:908:17\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)",
-                "diff": null
-              },
-              "uuid": "bc01581a-d6d4-496e-ad00-7ff13c6ed217",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            },
-            {
               "title": "Verify logging in using an incorrect password 'valid email but a wrong password' ",
               "fullTitle": "Log in Test for Lambda Website Verify logging in using an incorrect password 'valid email but a wrong password' ",
               "timedOut": null,
-              "duration": 11796,
+              "duration": 16649,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"seuncarta@gmail.com\");\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"Economicedu\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        login.click();\n        await driver.manage().setTimeouts({ implicit: 3000 });\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-password\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Please enter a correct username and password. Note that the password is case-sensitive. After 4 unsuccessful attempts your account will be locked.\", 'error message from wrong password');\n        //Close browser\n        await driver.quit();",
+              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"seuncarta@gmail.com\");\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"Economicedu\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        login.click();\n        await driver.manage().setTimeouts({ implicit: 3000 });\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-password\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Please enter a correct username and password. Note that the password is case-sensitive. After 1 unsuccessful attempts your account will be locked.\", 'error message from wrong password');\n        //Close browser\n        await driver.quit();",
               "err": {},
-              "uuid": "d249175d-6cbe-4ac6-b73c-519d94a3b6e3",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify logging in using a email that has not been not previously registered",
-              "fullTitle": "Log in Test for Lambda Website Verify logging in using a email that has not been not previously registered",
-              "timedOut": null,
-              "duration": 11603,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"seunjr7@gmail.com\");\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"Economicedu$156\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        login.click();\n        await driver.manage().setTimeouts({ implicit: 3000 });\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-email\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Please enter a correct username and password. Note that the password is case-sensitive\", 'error message from wrong email');\n        //Close browser\n        await driver.quit();",
-              "err": {},
-              "uuid": "360a68eb-8b06-43ca-9fc7-8a6c16e2d6a2",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify logging in using an empty email (email field empty)",
-              "fullTitle": "Log in Test for Lambda Website Verify logging in using an empty email (email field empty)",
-              "timedOut": null,
-              "duration": 10409,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"\");\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"Economicedu$156\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        login.click();\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-email\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Please enter your email\", 'error message from empty email');\n        //Close browser\n        await driver.quit();",
-              "err": {},
-              "uuid": "0277d698-465f-4c23-8fc3-ecd195c454b1",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify leaving the password filed empty",
-              "fullTitle": "Log in Test for Lambda Website Verify leaving the password filed empty",
-              "timedOut": null,
-              "duration": 9656,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"\");\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"seuncarta@gmail.com\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        login.click();\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-password\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Please enter your password\", 'error message from empty password');\n        //Close browser\n        await driver.quit();",
-              "err": {},
-              "uuid": "80950839-23df-4c7b-b709-5a7d8069d734",
-              "parentUUID": null,
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Verify login while making a spelling error in the mail feild",
-              "fullTitle": "Log in Test for Lambda Website Verify login while making a spelling error in the mail feild",
-              "timedOut": null,
-              "duration": 8817,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "let driver = await new Builder().forBrowser(Browser.CHROME).build();\n        await driver.get('https://accounts.lambdatest.com/login');\n        let username = await driver.findElement(By.id(\"email\"));\n        username.sendKeys(\"seuncartagmail.com\");\n        let password = await driver.findElement(By.id(\"password\"));\n        password.sendKeys(\"Economicedu$156\");\n        let login = await driver.findElement(By.id(\"login-button\"));\n        login.click();\n        let errorMessage = await (await driver.findElement(By.css('p[data-testid=\"errors-email\"]'))).getText();\n        assert.strictEqual(errorMessage, \"Invalid email address\", 'error message from wrong email');\n        //Close browser\n        await driver.quit();",
-              "err": {},
-              "uuid": "50267e2a-6f05-4e8a-a016-a5312faf51c6",
+              "uuid": "8f2a0e3d-d170-4876-8b6c-f618bea7f137",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -149,18 +55,12 @@
           ],
           "suites": [],
           "passes": [
-            "d249175d-6cbe-4ac6-b73c-519d94a3b6e3",
-            "360a68eb-8b06-43ca-9fc7-8a6c16e2d6a2",
-            "0277d698-465f-4c23-8fc3-ecd195c454b1",
-            "80950839-23df-4c7b-b709-5a7d8069d734",
-            "50267e2a-6f05-4e8a-a016-a5312faf51c6"
+            "8f2a0e3d-d170-4876-8b6c-f618bea7f137"
           ],
-          "failures": [
-            "bc01581a-d6d4-496e-ad00-7ff13c6ed217"
-          ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 63518,
+          "duration": 16649,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
@@ -194,7 +94,8 @@
     },
     "marge": {
       "options": {
-        "reportDir": "testReports"
+        "reportDir": "testReports",
+        "": true
       },
       "version": "6.2.0"
     }

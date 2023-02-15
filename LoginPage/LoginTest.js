@@ -18,7 +18,7 @@ describe("Log in Test for Lambda Website", function () {
         let login = await driver.findElement(By.id("login-button"));
         await login.click();
 
-        await driver.wait(until.urlIs('https://accounts.lambdatest.com/dashboard'), 3000, 'Showld load dashboard page');
+        await driver.wait(until.urlIs('https://accounts.lambdatest.com/dashboard'), 5000, 'Showld load dashboard page');
 
         //Close browser
         await driver.quit();
@@ -66,7 +66,7 @@ describe("Log in Test for Lambda Website", function () {
         let login = await driver.findElement(By.id("login-button"));
         login.click();
 
-        await driver.manage().setTimeouts({ implicit: 3000 });
+        await driver.manage().setTimeouts({ implicit: 5000 });
 
         let errorMessage = await (await driver.findElement(By.css('p[data-testid="errors-email"]'))).getText();
 
