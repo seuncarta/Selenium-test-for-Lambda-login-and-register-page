@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-03-07T12:00:00.197Z",
-    "end": "2023-03-07T12:00:21.791Z",
-    "duration": 21594,
+    "start": "2023-03-07T12:16:59.002Z",
+    "end": "2023-03-07T12:17:02.863Z",
+    "duration": 3861,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "828dae61-5ab5-49b6-86ff-785bf01b8042",
+      "uuid": "a8327388-e3ab-4524-8af0-b09a2406b4ce",
       "title": "",
       "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\test\\firstTest.js",
       "file": "\\test\\firstTest.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a22263ea-ebfe-4b4c-bef7-d3403bf40a92",
+          "uuid": "47c9c02a-500d-4d98-a282-b63ae29d0d42",
           "title": "add a todo task test",
           "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\test\\firstTest.js",
           "file": "\\test\\firstTest.js",
@@ -38,7 +38,7 @@
               "title": "successfully added a todo to our application",
               "fullTitle": "add a todo task test successfully added a todo to our application",
               "timedOut": null,
-              "duration": 20755,
+              "duration": 3245,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +47,7 @@
               "context": null,
               "code": "//Lunch the browser\n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate to our application\n        await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n        //add a todo\n        //using locators\n        await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Learn Selenium\", Key.RETURN);\n        //assert\n        let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function (value) {\n            return value\n        });\n        // let buttonText = await driver.findElement(By.id(\"addbutton\")).getText().then(function (value) {\n        //     return value\n        // });\n        //assert using node assertion\n        // assert.strictEqual(todoText, \"Learn Selenium\");\n        /*\n        let URL = await driver.getCurrentUrl();\n        assert.strictEqual(URL, \"https://lambdatestio/sample-todo-app/\");\n        URL.should.equal(\"https://lambdatest.github.io/sample-todo-app/\")\n        */\n        \n        //assert using chai should\n        todoText.should.equal(\"Learn Selenium\")\n        // buttonText.should.equal(\"Learn\")\n        //close the browser\n        await driver.quit();",
               "err": {},
-              "uuid": "d4f9c08c-2346-47d0-a6d8-15ab3739da5f",
+              "uuid": "f5e115fa-cfe7-4324-b212-4fcfff6edce4",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,12 +55,12 @@
           ],
           "suites": [],
           "passes": [
-            "d4f9c08c-2346-47d0-a6d8-15ab3739da5f"
+            "f5e115fa-cfe7-4324-b212-4fcfff6edce4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 20755,
+          "duration": 3245,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
