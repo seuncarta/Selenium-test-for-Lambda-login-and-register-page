@@ -13,7 +13,7 @@ describe("add a todo task test", function () {
     it("successfully added a todo to our application", async function () {
 
         //Lunch the browser
-        let driver = await new Builder().forBrowser("chrome").build();
+        let driver = await new Builder().forBrowser("firefox").build();
 
         //navigate to our application
         await driver.get("https://lambdatest.github.io/sample-todo-app/")

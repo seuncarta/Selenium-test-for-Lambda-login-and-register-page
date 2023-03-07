@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2023-03-07T12:16:59.002Z",
-    "end": "2023-03-07T12:17:02.863Z",
-    "duration": 3861,
+    "start": "2023-03-07T13:17:15.760Z",
+    "end": "2023-03-07T13:17:23.809Z",
+    "duration": 8049,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a8327388-e3ab-4524-8af0-b09a2406b4ce",
+      "uuid": "0afc26b6-d25a-4a30-9c58-d0e686426d06",
       "title": "",
       "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\test\\firstTest.js",
       "file": "\\test\\firstTest.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "47c9c02a-500d-4d98-a282-b63ae29d0d42",
+          "uuid": "dd46285e-f27e-49bf-8831-108f30bc3916",
           "title": "add a todo task test",
           "fullFile": "C:\\Users\\USER\\Desktop\\Selenium test for Lambda login and register page\\test\\firstTest.js",
           "file": "\\test\\firstTest.js",
@@ -38,16 +38,16 @@
               "title": "successfully added a todo to our application",
               "fullTitle": "add a todo task test successfully added a todo to our application",
               "timedOut": null,
-              "duration": 3245,
+              "duration": 7482,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "//Lunch the browser\n        let driver = await new Builder().forBrowser(\"chrome\").build();\n        //navigate to our application\n        await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n        //add a todo\n        //using locators\n        await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Learn Selenium\", Key.RETURN);\n        //assert\n        let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function (value) {\n            return value\n        });\n        // let buttonText = await driver.findElement(By.id(\"addbutton\")).getText().then(function (value) {\n        //     return value\n        // });\n        //assert using node assertion\n        // assert.strictEqual(todoText, \"Learn Selenium\");\n        /*\n        let URL = await driver.getCurrentUrl();\n        assert.strictEqual(URL, \"https://lambdatestio/sample-todo-app/\");\n        URL.should.equal(\"https://lambdatest.github.io/sample-todo-app/\")\n        */\n        \n        //assert using chai should\n        todoText.should.equal(\"Learn Selenium\")\n        // buttonText.should.equal(\"Learn\")\n        //close the browser\n        await driver.quit();",
+              "code": "//Lunch the browser\n        let driver = await new Builder().forBrowser(\"firefox\").build();\n        //navigate to our application\n        await driver.get(\"https://lambdatest.github.io/sample-todo-app/\")\n        //add a todo\n        //using locators\n        await driver.findElement(By.id(\"sampletodotext\")).sendKeys(\"Learn Selenium\", Key.RETURN);\n        //assert\n        let todoText = await driver.findElement(By.xpath(\"//li[last()]\")).getText().then(function (value) {\n            return value\n        });\n        // let buttonText = await driver.findElement(By.id(\"addbutton\")).getText().then(function (value) {\n        //     return value\n        // });\n        //assert using node assertion\n        // assert.strictEqual(todoText, \"Learn Selenium\");\n        /*\n        let URL = await driver.getCurrentUrl();\n        assert.strictEqual(URL, \"https://lambdatestio/sample-todo-app/\");\n        URL.should.equal(\"https://lambdatest.github.io/sample-todo-app/\")\n        */\n        \n        //assert using chai should\n        todoText.should.equal(\"Learn Selenium\")\n        // buttonText.should.equal(\"Learn\")\n        //close the browser\n        await driver.quit();",
               "err": {},
-              "uuid": "f5e115fa-cfe7-4324-b212-4fcfff6edce4",
+              "uuid": "d7af6b2d-b631-4f27-8c35-7ef6b7f306b9",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,12 +55,12 @@
           ],
           "suites": [],
           "passes": [
-            "f5e115fa-cfe7-4324-b212-4fcfff6edce4"
+            "d7af6b2d-b631-4f27-8c35-7ef6b7f306b9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3245,
+          "duration": 7482,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
