@@ -1,6 +1,6 @@
 // Include the chrome driver
 
-const { Builder, Browser, By, Key, until } = require("chromedriver");
+const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
 
 // Include selenium webdriver
 let swd = require("selenium-webdriver");
